@@ -498,7 +498,8 @@ check_ext_pack
 check_unar
 
 # Install each requested virtual machine sequentially.
-all_versions="6 7 8 9 10 11 EDGE"
+# all_versions="6 7 8 9 10 11 EDGE"
+all_versions="8"
 for ver in ${IEVMS_VERSIONS:-$all_versions}
 do
     log "Building IE ${ver} VM"
