@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 
 # Caution is a virtue.
 set -o nounset
@@ -157,16 +157,16 @@ check_ext_pack() {
         download "Oracle VM VirtualBox Extension Pack" "${url}" "${archive}" "${md5}"
 
         log "Installing Oracle VM VirtualBox Extension Pack from ${ievms_home}/${archive}"
-        yes| VBoxManage extpack install "${archive}" || fail "Failed to install Oracle VM VirtualBox Extension Pack from ${ievms_home}/${archive}, error code ($?)"
+        VBoxManage extpack install "${archive}" || fail "Failed to install Oracle VM VirtualBox Extension Pack from ${ievms_home}/${archive}, error code ($?)"
     fi
 }
 
 # Download and install `unar` from Google Code.
 install_unar() {
-    local url="http://unarchiver.c3.cx/downloads/unar1.10.1.zip"
+    local url="https://theunarchiver.com/downloads/unarMac.zip"
     local archive=`basename "${url}"`
 
-    download "unar" "${url}" "${archive}" "d548661e4b6c33512074df81e39ed874"
+    download "unar" "${url}" "${archive}" "91796924b1b21ee586ed904b319bb447"
 
     unzip "${archive}" || fail "Failed to extract ${ievms_home}/${archive} to ${ievms_home}/, unzip command returned error code $?"
 
